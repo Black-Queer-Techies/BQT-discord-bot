@@ -1,2 +1,2 @@
-# BlackQueerTechies
-Collection of bots and such for BlackQueerTechies discord server
+# BQT Discord Bot
+Discord bot for the BQT discord server.
