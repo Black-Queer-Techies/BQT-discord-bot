@@ -7,8 +7,7 @@ from cogs.tech_news_cog import TechNewsCog
 from cogs.greetings import Greetings
 
 def start():
-    #token = os.getenv("DISCORD_TOKEN")
-    token = "OTI4MDI0MjI2ODc3ODI1MTM0.YdSv6Q.novm4LxwzWZ8h3LbCzTsLPxf-T8"
+    token = os.getenv("DISCORD_TOKEN")
 
     intents = discord.Intents.default()
     intents.members = True
