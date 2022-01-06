@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Access keys for servers
+*.pem
+
 # C extensions
 *.so
 
