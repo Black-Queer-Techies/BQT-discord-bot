@@ -3,7 +3,7 @@ import random
 import discord
 
 from client.main_bot_client import MainBotClient
-
+from cogs.tech_news_cog import TechNewsCog
 
 def start():
     token = os.getenv("DISCORD_TOKEN")
