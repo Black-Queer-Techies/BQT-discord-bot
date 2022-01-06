@@ -16,7 +16,7 @@ class TechNewsCog(discord.ext.commands.Cog, name="Tech News module"):
     def get_news_article(self):
         return "Testing the works..."
 
-    @discord.ext.tasks.loop(seconds=5)
+    @discord.ext.commands.command()
     async def publish_news_article(self):
         channel = self.bot.get_channel(DISCORD_CHANNEL_ID)
         await channel.send(self.get_news_article())
