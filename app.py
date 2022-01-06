@@ -5,12 +5,19 @@ import discord
 from client.main_bot_client import MainBotClient
 
 
-def run_bot():
+def start():
     token = os.getenv("DISCORD_TOKEN")
 
-    bot = MainBotClient(command_prefix="$")
+    intents = discord.Intents.default()
+    intents.members = True
+
+    bot = MainBotClient(command_prefix="$", intents=intents)
+    
+    # Adding cogs
+    bot.add_cog(TechNewsCog(bot))
+    
     bot.run(token)
 
 
 if __name__ == "__main__":
-    run_bot()
+    start()
