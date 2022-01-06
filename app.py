@@ -2,7 +2,7 @@ import os
 import random
 import discord
 
-from clients.main_bot_client import MainBotClient
+from client.main_bot_client import MainBotClient
 
 
 def run_bot():

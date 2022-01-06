@@ -6,8 +6,8 @@ class Greetings(discord.ext.commands.Cog, name="Greetings module"):
         self.bot = bot
 
     @discord.ext.commands.command(name="hey")
-    async def adhoc_play(self, ctx):
-        await ctx.send(f"Hey {ctx.author.name}")
+    async def adhoc_play(self, client):
+        await client.send(f"Hey {client.author.name}")
 
     @discord.ext.commands.Cog.listener()
     async def on_member_join(self, member):
