@@ -15,7 +15,7 @@ def start():
     bot = MainBotClient(command_prefix="$", intents=intents)
 
     # Adding cogs
-    # bot.add_cog(TechNewsCog(bot))
+    bot.add_cog(TechNewsCog(bot))
     bot.add_cog(Greetings(bot))
 
     bot.run(token)
