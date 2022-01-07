@@ -33,7 +33,6 @@ class TechNewsCog(commands.Cog, name="Tech News module"):
         for article in articles[0:2]:
             url = article["url"]
             await channel.send(url)
-
             await asyncio.sleep(5)
 
     @send_news_article_link.before_loop

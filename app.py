@@ -6,6 +6,7 @@ from client.main_bot_client import MainBotClient
 from cogs.tech_news_cog import TechNewsCog
 from cogs.greetings import Greetings
 
+
 def start():
     token = os.getenv("DISCORD_TOKEN")
 
@@ -14,9 +15,12 @@ def start():
 
     bot = MainBotClient(command_prefix="$", intents=intents)
 
-    # Adding cogs
-    bot.add_cog(TechNewsCog(bot))
-    bot.add_cog(Greetings(bot))
+    # Adding all cogs to BQTBot
+    for filename in os.listdir("./cogs"):
+        if filename.endswith(".py"):
+            bot.load_extension(f"cogs.{filename[:-3]}")
+        else:
+            print("Unable to load ", filename[:3])
 
     bot.run(token)
 
