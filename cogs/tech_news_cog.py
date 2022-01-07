@@ -38,3 +38,6 @@ class TechNewsCog(commands.Cog, name="Tech News module"):
     @send_news_article_link.before_loop
     async def before_send_news_article_link(self):
         await self.bot.wait_until_ready()
+
+def setup(bot):
+    bot.add_cog(TechNewsCog(bot))

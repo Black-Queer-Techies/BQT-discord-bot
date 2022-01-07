@@ -9,3 +9,6 @@ class Greetings(commands.Cog, name="Greetings module"):
     async def on_member_join(self, member):
         channel = self.bot.get_channel(928000257973964810)
         await channel.send(f"Welcome to Black Queer Techies {member.mention}!")
+
+def setup(bot):
+    bot.add_cog(Greetings(bot))
