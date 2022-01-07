@@ -13,7 +13,7 @@ def start():
     intents = discord.Intents.default()
     intents.members = True
 
-    bot = MainBotClient(command_prefix="$", intents=intents)
+    bot = MainBotClient(command_prefix=".", intents=intents)
 
     # Adding all cogs to BQTBot
     for filename in os.listdir("./cogs"):
