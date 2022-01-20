@@ -1,4 +1,5 @@
 import asyncio
+import aiocron
 import requests
 import os
 
@@ -16,9 +17,8 @@ class TechNewsCog(commands.Cog, name="Tech News module"):
 
     def __init__(self, bot):
         self.bot = bot
-        self.send_news_article_link.start()
 
-    @tasks.loop(hours=24)
+    @aiocron.crontab('0 10 * * MON-FRI', start=True) # Run at 10AM EST everyday, monday through friday
     async def send_news_article_link(self):
         channel = self.bot.get_channel(DISCORD_CHANNEL_ID)
 
@@ -35,10 +35,6 @@ class TechNewsCog(commands.Cog, name="Tech News module"):
             url = article["url"]
             await channel.send(url)
             await asyncio.sleep(5)
-
-    @send_news_article_link.before_loop
-    async def before_send_news_article_link(self):
-        await self.bot.wait_until_ready()
-
+            
 def setup(bot):
     bot.add_cog(TechNewsCog(bot))
